@@ -1,4 +1,4 @@
-# Calculate gravity table for edges
+# Calculate gravity  table for edges
 def calculate_gravity_table(G):
     GravityTable = []
     for edge in G.edges():
