@@ -1,52 +1,61 @@
-# Road Network Community Detection with Gravity-Based Assignment
-Overview
-Our project focuses on modeling and optimizing road networks by representing them as graphs. This approach allows us to analyze traffic patterns and enhance route planning efficiently.
+Intelligent Road Network Community Detection with Gravity-Based Assignment
+This repository contains the official source code used in the research paper:
 
-What We Are Doing
-We are implementing the Road Network Community Detection with Gravity-Based Assignment algorithm, which aims to:
+S. M. Salam and A. Mitra, "A Base Algorithm for Intelligent Traffic Management System for Urban Transportation using 6G Network," 2024 IEEE International Conference on Advanced Networks and Telecommunications Systems (ANTS), Guwahati, India, 2024, pp. 1-6, doi: 10.1109/ANTS63515.2024.10898282.
 
-Identify Communities:
+Keywords: {6G mobile communication; Roads; Heuristic algorithms; Urban areas; Transportation; Clustering algorithms; Traffic control; Real-time systems; Planning; Partitioning algorithms; Traffic management; Urban transportation network; Community detection; 6G Network; Dijkstra’s Algorithm; Shortest path Algorithm}
 
-Group road segments into communities based on traffic patterns, node weights, and physical distances.
-Optimize Route Planning:
+Note: This repository includes the exact code used to generate the results in the above paper. I am a co-author of the publication.
 
-Precompute important metrics to speed up route calculations and reduce computational overhead.
-Key Concepts
-Graph Representation:
-Road networks are modeled as graphs where intersections and road segments are nodes and edges, respectively.
+Project Overview
+This project models urban road networks as graphs and implements a gravity-based community detection algorithm for intelligent traffic management, leveraging the advancements of 6G networks.
 
-Community Detection:
-Similar to social networks, we group nodes (road segments) into communities based on their connectivity and traffic flow.
+Graph Modeling: Intersections and road segments as nodes and edges.
 
-Betweenness Centrality:
-To optimize routes, we calculate betweenness centrality for nodes to identify critical bridge nodes connecting different communities.
+Gravity-Based Assignment: Road segments are grouped into communities based on traffic density, node weighting, and proximity.
 
-Approach
-Community Formation:
+Critical Node Analysis: Calculates betweenness centrality to find bridge nodes that are key to efficient route planning.
 
-Compute connection strengths using traffic density, node weights, and distances.
-Assign nodes to communities based on these strengths.
-Precompute Metrics:
-
-Calculate and store betweenness centrality at peak traffic times.
-Identify and store bridge nodes between communities.
-Shortest Path Calculation:
-
-Use Dijkstra’s or A* algorithm to find the shortest path:
-From the source to a bridge node.
-Across bridge nodes between communities.
-From the bridge node to the destination.
-Benefits
-Efficiency:
-By precomputing and storing key metrics, we reduce the computational complexity compared to recalculating them on-the-fly.
-
-Improved Route Planning:
-Integrating community-based shortest paths with inter-community connections enhances navigation across the road network.
+Fast Route Planning: Uses precomputed metrics with Dijkstra's (or A*) algorithm for quick, optimal path finding.
 
 Getting Started
-Installation:
+Requirements
+Python 3.8+
 
-Clone the repository.
-Install the required Python packages: networkx, matplotlib, etc.
-Usage:
-Run the provided scripts to generate synthetic road networks, detect communities, and compute shortest paths.
+No requirements.txt is needed. This repository uses only standard library modules, plus networkx and (optionally) matplotlib for graph visualization.
+
+You can install these packages with:
+
+pip install networkx matplotlib
+
+Usage
+All major functions are organized in separate .py files for clarity and modularity.
+
+To run the complete workflow (as used in the publication), simply execute:
+
+python Complete_Code.py
+
+This script:
+
+Generates the road network
+
+Detects communities with gravity-based assignment
+
+Computes and stores key metrics
+
+Demonstrates optimized shortest path calculation
+
+File Structure
+Individual algorithm components are in separate Python files for easy inspection and modification.
+
+All steps can be run in sequence with Complete_Code.py.
+
+Citation
+If you use this repository, please cite as follows:
+
+S. M. Salam and A. Mitra, "A Base Algorithm for Intelligent Traffic Management System for Urban Transportation using 6G Network," 2024 IEEE International Conference on Advanced Networks and Telecommunications Systems (ANTS), Guwahati, India, 2024, pp. 1-6, doi: 10.1109/ANTS63515.2024.10898282.
+
+Contact
+For research questions or collaborations, please open a GitHub issue or contact S. M. Salam (co-author).
+
+This is the reproducible source code underpinning the above IEEE publication. Anyone may reproduce all paper results by running Complete_Code.py.
