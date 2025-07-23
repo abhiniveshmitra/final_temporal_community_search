@@ -87,13 +87,13 @@ pip install networkx matplotlib
 
 ### Usage
 
-Run the full workflow as in the publication:
+To reproduce the full workflow as used in the publication, run:
 
 ```bash
 python Complete_Code.py
 ```
 
-This will:
+This single script will:
 
 1. Generate the road network  
 2. Detect communities using gravity-based assignment  
@@ -104,14 +104,24 @@ This will:
 
 ## File Structure
 
-```bash
-├── Complete_Code.py       # Main script orchestrating the full workflow
-├── graph_model.py         # Functions for generating and loading road networks
-├── gravity_assignment.py  # Implements the gravity-based clustering algorithm
-├── centrality_analysis.py # Betweenness centrality and critical node detection
-├── routing.py             # Dijkstra’s / A* shortest-path implementations
-└── utils.py               # Shared utilities for I/O, logging, and visualization
+```text
+├── Complete_Code.py
+├── README.md
+├── a_star.py
+├── assign_nodes_to_communities.py
+├── calculate_gravity_table.py
+├── calculate_max_gravity_table.py
+├── find_community_bridges.py
+├── find_optimal_threshold.py
+├── find_shortest_path_with_communities.py
+├── generate_synthetic_graph.py
+├── main.py
+└── plot_graph.py
 ```
+
+> **Note:**  
+> - `Complete_Code.py` is an all-in-one script that amalgamates the functionality from the other modules into a single workflow.  
+> - The individual `.py` files contain modular implementations of each step for clarity and potential reuse.
 
 ---
 
